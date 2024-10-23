@@ -1,0 +1,35 @@
+cancelDto - cardCancelReasonInfo
+// Информация о причинах отмены действия с картой
+
+id - currentUserId
+// Id текущего пользователя
+
+cancelEvent - cardDebtCancelEvent
+// Эвент с отменой списания по карте из кафки
+
+stage - requestToCrDocProcessingStage
+// Этап обработки запроса в систему "CrDoc" в оркестраторе
+
+cache - crDocCachedInfo
+// Закэшированный запрос, отправленный в систему "CrDoc"
+
+counter - halfLengthOfPalindrome
+// Переменная для условия i < counter в цикле for для поиска палиндрома
+
+attempt - attemptsToSendKafkaCounter
+// Счетчик попыток отправки в кафку
+
+sum - innСheckSum
+// Контрольная сумма инн
+
+testIndx - indexObtainedFromHashFunction
+// Первоначальный индекс, полученный из хэщ функции в методе seekSlot
+
+node - nodeWithIncomingValue
+// Нода, создаваемая для поиска по переданному значению
+
+counter - indexRepetitionStorage
+// Название массива где хранится повторение определенного индекса в ячейке с этим индексом
+
+tags - productСategoriesTags
+// Тэги продукта по категориям
