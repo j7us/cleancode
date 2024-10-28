@@ -1,0 +1,44 @@
+// 7.1
+
+asc - ascending (isAscending)
+// Переменная в задании orderedList.
+
+notFoundAnyPbVolumes - foundPbVolumes
+// поиск объемов для документа по нефти
+
+requestFromAe - isRequestFromAe
+//кажется без is не очень понятно, что на жто можно ответить только true или false
+
+mistakeCheck - isAnyMistake
+// проверка ошибок при совершении операции
+
+isEqualsChar - charEquals
+// Из задачи про стек и скобочки
+
+
+// 7.2
+
+success - результат отправки в сервис, в случае, если !success, то вызываем retry
+found - нахождение какого-то элемента в бд, для распознавания дублей из кафки
+
+
+// 7.3
+
+Использовал node или currentNode вместо i в цикле for в заданиях со списокм.
+
+
+// 7.4
+firstNode и lastNode
+// Из задач про список
+
+startDate и endDate
+// даты обработки карты
+
+
+
+//7.5
+date - deliveryDate
+now - currentDate (serverDateNow)
+// Чаще всего плохо проименованы в коде переменные, относящиеся к датам.
+
+
