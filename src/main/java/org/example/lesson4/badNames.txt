@@ -1,0 +1,35 @@
+usersList - users
+// Найдено на просторах рабочего проекта, не используется с ArrayList
+
+petrol92 - regularPetrol
+// Обозначение 92 бензина
+
+event3725 - cashWithdrawalEvent
+// Событие снятие с карты, название писалось по коду события
+
+volume - volumeTon
+// Были переменные volumeBarrel и volumeAstm, но основной объем почему-то записывался без обозначение размерности
+
+amount - massTon
+// Такая же ситуация, только с массой
+
+max - cardMaxAmount
+// Максимальная сумма, доступная по карте
+
+result - requestResult
+// Результат запроса
+
+result - stackElementSum
+// Из задания про среднее значение жлементов в стеке
+
+uploadedActFilesMigrationHandler и uploadedShipFilesMigrationHandler - actHandler и shipmentHandler
+// Рабочий пример, названия слегка изменены из-за забывчивости, в реальности были еще символов на 10 больше
+
+asvInfoDto - asvInfo
+// Подходит под 4 пункт о неинформативных именах, так как используется в контексте, где нет никаких классов, кроме dto (или под пунт 6)
+
+inputField и toInput - inputField и actToInput
+// Переменная для заполнения input в jsf и обновленное значение для сравнения с текущем в inputField
+
+size - tagsCount
+// Исправлено в связи с пунктом 3, переменная создается с помощью метода size() из листа с тэгами, избегаем обобщенного названия, связанного с функцией
