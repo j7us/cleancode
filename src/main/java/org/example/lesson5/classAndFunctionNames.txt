@@ -1,0 +1,48 @@
+// 3.1
+
+PlanBatchManager - PlanBatchMainPageViewHandler(может можно без View)
+// В приложении с jsf класс, который содержит необходимую информацию для отрисовки страницы плановых партий
+
+CargoMovementManager - CargoMovementViewHandler
+// В приложении с jsf класс, который содержит необходимую информацию для отрисовки страницы движения груза
+// (понимаю что дублирование
+
+UploadedFilesProcessor - FilesToEntityParser
+// Класс, который конвертировал строки excel или txt файла в объекты для сохранения в бд
+
+UploadedFilesProcessor и TransshipmentActParser - FilesToEntityParser и TransshipmentActParser
+// В приложении есть два класса, один парсит объекты для обобщенных рабочих мест, другой тоже парсит классы но только для актов,
+// возможно первый класс был легаси наследием
+
+UserInfo и UserInfoDto - User и UserDto
+// Класс пользователя
+
+InspectorPermission - InspectorRestriction
+// Относится к пункту 2, в приложении использовался класс UserRestriction,
+// но для ограничения рабочих мест инспекторов назвали класс InspectorPermission
+
+
+
+// 3.2
+
+save и add - add
+// все методы сводятся к сохранению в бд через entityManager.merge()
+
+validate и check - validate
+// методы для валидации у кастомного validator
+
+getBy и get - get
+// Тоже возможно легаси наследование в коде, но методы getBy и get оба с атрибутами
+
+additionalDocumentsQuery и tankersMassView - additionalDocumentSubQuery и tankersAmountSubQuery
+// Использовали в проекте JOOQ, оба объекта на самом деле использовались для подзапросов,
+// но почему-то назывались view или query
+
+clear и deleteAll - clear
+// Методы удаления в списке
+
+perform и get - perform
+// Выполнение запроса к бд JOOQ
+
+getTotalSum и getSum - getSum
+// Раасчеты по суммированию определенных операций по карте
