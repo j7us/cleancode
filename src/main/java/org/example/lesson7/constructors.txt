@@ -1,0 +1,18 @@
+// 3.1
+
+fromCancelType(CancelType cancelType)
+
+fromFeeInfo(FeeInfoDto feeInfoDto)
+
+fromCardInfo(CardInfoDto cardInfoDto)
+
+// Три примера методов-фабрик для класса FieldsContainer, поля объекта такого класса могут быть заполнены из трех других классов
+
+
+// 3.2
+
+PlanBatchQuery и PlanBatchQueryImpl
+// Интерфейс и реализация для JOOQ sql-запроса
+
+CardMapper и CardMapperImpl
+// Интрфейс и реализация в mapStruct
