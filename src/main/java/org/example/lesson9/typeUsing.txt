@@ -1,0 +1,45 @@
+double amount - BigDecimal amount
+// Обычно в коде везде используется именно BigDecimal, но в одном месте видимо была допущена ошибка
+
+action == Action.SEND || action == Action.REPEAT_SEND - boolean isMessageInSendOrRepeat = action == Action.SEND || action == Action.REPEAT_SEND
+// Заменил часть условия на boolean переменную
+
+count/(slots.getCapacity()/100.00) > 80.0 - count/(slots.getCapacity()/100) > 80
+// Из задачи про ассоциативный массив, в выражении проверяется заполнен ли массив больше чем на 80 процентов,
+// возможно использовать целые числа, чтобы высчитывалось примерно или заменить на выражения с BigDecimal
+
+count/(slots.getCapacity()/100) > 80 - boolean isTableFilledAbove
+// Возможно стоит еще заменить это выражение внутри условия на boolean переменную, чтобы в случае изменения или разрастания условия
+// переполнения код был чище
+
+count/(slots.getCapacity()/100) > 80 - count/(slots.getCapacity()/100) > TABLE_RESIZE_THRESHOLD
+// Избавился от магического числа в виде 80% заполненности
+
+public static final String INCORRECT_AMOUNT_SUM = "Масса нетто заполнена неверно итоговая сумма должна равняться {0}" -
+String incorrectAmountSumTemplate = "Масса нетто заполнена неверно итоговая сумма должна равняться {0}"
+// Перенес эту переменную из констант в функцию рядом с местом ее применения
+
+(amount + amountGross)/72 > amountGost && amountBarrel > 0 - boolean allAmountsInBalance = (amount + amountGross)/72 > amountGost && amountBarrel > 0
+// Вынес сложное условие в отдеьную переменную
+
+(amount + amountGross)/72 - (amount + amountGross)/AMOUNT_BALANCED_COEFFICIENT
+// Вынес магическое число в константу
+
+public static final String DESERIALIZATION_ERROR = "Ошибка десериализации ответа от АЛС для {0}" -
+new RuntimeException(Messaage.format("Ошибка десериализации ответа от АЛС для {0}", error))
+// Избавился от константы, вынес сразу в место применения
+
+public static final String SERIALIZATION_ERROR = "Ошибка сериализации запроса к АЛС для {0}" -
+new RuntimeException(Messaage.format("Ошибка сериализации запроса к АЛС для {0}", error))
+// Избавился от константы, вынес сразу в место применения
+
+int monthAmountSum = planBatchList.stream().map(PlanBatch::getAmount).reduce((a,b) -> a+b) -
+int monthAmountSum = planBatchList.stream().map(PlanBatch::getAmount).reduce(Math::addExtract)
+// Добавил проврку на переполнение при работе с большими значениями
+
+(planBatch.getOilType() == OilType.OIL || planBatch.getOilType() == OilType.OIL_PRODUCT)
+    || (planBatch.getOilType() == OilType.GAS && planBatch.getShippingType == ShippingType.WATER) -
+boolean isOilContainingProduct = planBatch.getOilType() == OilType.OIL || planBatch.getOilType() == OilType.OIL_PRODUCT
+boolean isGasProductShippedByWater = planBatch.getOilType() == OilType.GAS && planBatch.getShippingType == ShippingType.WATER
+// Разбил часть сложного условия на boolean
+
