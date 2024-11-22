@@ -1,0 +1,182 @@
+public static final String TT7520 = "7520" - private static final String TT7520 = "7520"
+// Перенес константу из утильного класса в класс, где она используется и сменил область видимости на private
+
+
+
+
+public static final BigDecimal averagePrice = BidDecimal.of(177.55) - BigDecimal averagePrice = BidDecimal.of(177.55)
+// Аналогично перенес константу, но напрямую в метод где она используется, т.к других мест не было обнаружено
+
+
+
+
+public static final String notEnoughMassErrorMessage = "Не достаточно массы для заполнения документа на танкер" -
+ErrorMessage.of("Не достаточно массы для заполнения документа на танкер")
+// Перенес константу в место использования из утильного класса для ошибок в место применения.
+// По идее такие ошибки могли бы быть константами и использоваться универсально,
+// но для каждого представления аналитика требует свои ошибки без универсальности.
+
+
+
+
+String describe = "describe:"
+//некоторое кол-во кода
+String error = errorState.getError()
+try {
+    sender.send(describe + error);
+}
+-
+try {
+    sender.send("describe:" + error);
+}
+// Убрал лишнее объявление переменной, в данном случае использовался распространенный в команде шаблон
+// со сбором сообщения в зависимости от поведения внутри функции, но данное сообщение состояло лишь из одного error
+
+
+
+
+String describe = "describe:"
+//некоторое кол-во кода
+describe = describe + status.getStatusCode();
+//некоторое кол-во кода
+describe = describe + errorState.getError();
+try {
+    sender.send(describe);
+}
+-
+try {
+    sender.send(buildDescribe(status.getStatusCode(), errorState.getError());
+}
+// Вынес все взаимодействия с переменной в отдельный метод buildDescribe(String... describeParts),
+// уменьшив видимость переменной
+
+
+
+private static final CompanyInfo companyInfo;
+private static final User userWithCompany;
+
+public PlanBatchFilter(CompanyInfo info) {
+    companyInfo = info;
+    userWithCompany = extractField(companyInfo, CompanyInfo::getUser);
+    userWithCompany.setCompany("Als");
+}
+-
+private static final CompanyInfo companyInfo;
+
+public PlanBatchFilter(CompanyInfo info) {
+    companyInfo = info;
+}
+// Убрал создание userWithCompany в конструкторе, и перенес в место использования,
+// добавил функцию buildUserWithCompney(CompanyInfo companyInfo) для получения User
+
+
+
+
+LocalDate destinationDate = tankerloads.getDestinationDate;
+if (destinationDate.isAfter(reportDate)) {
+    planBatch.setDestinationDate(destinationDate);
+}
+-
+if (tankerloads.getDestinationDate.isAfter(reportDate)) {
+    planBatch.setDestinationDate(tankerloads.getDestinationDate());
+}
+// Убрал объявление переменной
+
+
+
+
+RouteNode departurePoint = transportation.getDeparturePoint();
+planBatch.setRouteNode(departurePoint);
+LocalDate destinationDate = tankerloads.getDestinationDate;
+if (destinationDate.isAfter(reportDate)) {
+    planBatch.setDestinationDate(destinationDate);
+}
+LocalDate departureDate = tankerloads.getDepartureDate;
+if (departureDate.isBefore(reportDate)) {
+    planBatch.setDepartureDate(departureDate);
+}
+updatePlanBatchViewRouteNode(departurePoint);
+-
+LocalDate destinationDate = tankerloads.getDestinationDate;
+if (destinationDate.isAfter(reportDate)) {
+    planBatch.setDestinationDate(destinationDate);
+}
+LocalDate departureDate = tankerloads.getDepartureDate;
+if (departureDate.isBefore(reportDate)) {
+    planBatch.setDepartureDate(departureDate);
+}
+updatePlanBatchAndPlanBatchViewDeparture(planBatchBuilder, transportation.getDeparturePoint());
+// Вынес в отдельный небольшой метод все взаимодействия с переменной departurePoint
+
+
+
+
+private Field<String> departurePoint = Field.from(Record record)
+- Field<String> departurePoint = Field.from(Record record)
+// Поле класса содержит field для использования в JOOQ, но используется в нескольких в одном методе,
+// поэтому перенес туда
+
+
+
+
+Node firstNode = head;
+while(firstNode != null) {}
+-
+for( Node firstNode = head; firstNode != null; firstNode = firstNode.next) {}
+// Из задания про списки, перенес объявление переменной внутрь цикла
+
+
+
+
+Node node = head;
+while(node != null) {}
+-
+for( Node node = head; node != null; node = node.next) {}
+// Аналогичная ситуация в методах findAll и find в заданиях про связанные списки
+
+
+
+Node node = this.head;
+if (node.value = value) {
+    return node;
+}
+-
+if (this.head.value = value) {
+    return node;
+}
+// Убрал лишнее использование переменной
+
+
+
+
+BigDecimal astm = BigDecimal.Zero
+if(tanker.getAstm().compareTo(astm) > 0) {
+    return tanker.getAstm();
+} else{
+    return astm;
+}
+-
+if(tanker.getAstm().compareTo(BigDecimal.Zero) > 0) {
+    return tanker.getAstm();
+}
+
+return BigDecimal.Zero;
+// Убрал лишнее объявление переменной
+
+
+
+
+boolean isEnoughMass = checkPlanBatchMass();
+if(isEnoughMass) {}
+-
+if(checkPlanBatchMass())
+// Заменил использование переменой на использование метода напрямую
+
+
+
+
+String json = objectMapper.writeAsString(altmRq);
+kafkaSender.send(json);
+-
+kafkaSender.send(objectMapper.writeAsString(altmRq));
+// Убрал лишнюю переменную
