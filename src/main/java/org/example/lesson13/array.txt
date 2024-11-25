@@ -1,0 +1,31 @@
+List<ActPosition> positions = new ArrayList<>() - Set<ActPosition> positions = new HashSet<>()
+// Класс TransshipmentAct содержит динамический массив, в программе индексация происходит всего два раза,
+// но этого можно избежать, каждая позиция должна быть уникальна, поэтому можно использовать множество
+
+
+
+
+List<ActPosition> positions = new ArrayList<>() - Set<ActPosition> positions = new HashSet<>()
+// Аналогичная ситуация возможна и в классе ShipmentAct, в данном случае индексации вообще нет
+
+
+
+
+Horse[] horsesList - LinkedList horsesList
+// Массив лошадей в коде старого проекта про игру в скачки, в данном случае массив индексируется лишь в одном месте,
+// из-за чего может быть заменен например на связанный список
+
+
+
+
+List<? extends AbstractMapper> mappers = new ArrayList<>() -
+List<? extends AbstractMapper> mappers = new LinkedList<>()
+// Заменил использование динамического массива на связанный список, в данном случае переменная содержит
+// список мапперов, которые потом будут участвовать в преобразовании поступивших из кафки сообщений
+
+
+
+
+List<Producer> producersChooser = new ArrayList<>() - List<Producer> producersChooser = new LinkedList<>()
+// Заменил использование динамического массива на связанный список в переменной, хранящей значение для отображения
+// списка производителей
