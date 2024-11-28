@@ -88,4 +88,15 @@ if(deleteEvent(Service.eventType())) {}
 
 
 
-//
+// Реализация Register. Блок регистра.
+Register register = new Register();
+
+if (DPC_DEPOSIT.equals(operation.getTypeCod()) {
+    register.setDocument(operation.getDocument());
+}
+
+if (TT7920.equals(operation.getReasonCode()) {
+    register.setReason(TT7920);
+}
+-
+public Register buildRegister()
